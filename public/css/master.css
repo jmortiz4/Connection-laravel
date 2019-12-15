@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+
+.carousel .carousel-inner .carousel-caption p{
+    font-family: 'Lato', sans-serif;
+    font-size: 200%;
+    color: white;
+}
+.carousel .carousel-inner .carousel-caption h5{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 300%;
+    color: white;
+
+    border: solid grey;
+    /* background-color: rgba(0, 0, 0, 0.404); */
+    text-transform: uppercase;
+}
+.carousel video-fluid{
+    opacity: .7;
+}
+.carousel-caption {
+    top: 60%;
+transform: translateY(-60%);
+}
+.comentarios{
+    color: white;
+    font-family: Arial;
+}
+.nombre_comentario{
+    font-family: 'Franklin Gothic Medium';
+    color: grey;
+}
+.botonLogin{
+    text-decoration: none;
+}
+h2{
+    color: white;
+    font-family: 'Lato', sans-serif;
+
+
+}
+p{
+    color: rgb(184, 184, 184);
+    justify-content: center;
+    padding: 20px;
+}
+
+ul li{
+    color: rgb(184, 184, 184);
+    padding: 10px;
+}
+h3{
+    color: white;
+    font-size: 3rem;
+    font-family: 'Exo', sans-serif;
+    margin: 20px;
+    padding: 50px;
+    background-color: rgba(0, 255, 255, 0.075);
+}
+.videos{
+    position: absolute;
+    z-index: -1;
+    
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    };
+button.a { 
+    text-decoration: none; 
+};
