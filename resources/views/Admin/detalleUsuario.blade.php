@@ -5,6 +5,7 @@
     <div class="col-lg-4 offset-lg-4">
         <div class="card w-100">
             <ul class="list-group list-group-flush">
+              <li class="list-group-item "><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div></li>
               <li class="list-group-item ">Nombre: {{$user->name}}</li>
               <li class="list-group-item ">Email: {{$user->email}}</li>
               <li class="list-group-item">Posteos:

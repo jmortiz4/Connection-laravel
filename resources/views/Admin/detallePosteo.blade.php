@@ -18,10 +18,10 @@
 
                 <li class="list-group-item">Usuario:
                                                       <ul>
+                                                        <li><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$users->avatar)}}"></div></li>
                                                         <li>{{"Nombre: ".$users->name}}</li>
                                                         <li>{{"Email: ".$users->email}}</li>
                                                         <li>{{"ID: ".$users->id}}</li>
-                                                        <li></li>
                                                       </ul>
                                                     </li>
 
