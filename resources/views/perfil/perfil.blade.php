@@ -20,6 +20,7 @@
          <button type="submit" class="btn btn-primary">Subir foto</button>
      </form>
      </article>
+     </section>
 
      <div class="misPosteos">
        <h1>Mis Posteos:</h1>
@@ -45,15 +46,74 @@
                        </audio>
                      @else {{"No hay archivo"}}
                    @endif</td>
-                     <td><a href="/eliminarPosteo/{{$posteo->id}}"><ion-icon name="thumbs-down"></ion-icon></a></td>
+                     <td><a href="/eliminarPosteo/{{$posteo->id}}"><ion-icon name="trash"></ion-icon></a></td>
                  </tr>
                @endforeach
 
-           </tbody>
-       </table>
-       <div>
-     </div>
-   </section>
-  </div>
+               </tbody>
+           </table>
+      </div>
+      </div>
+
+      <div class="misAmigos">
+         <h1>Mis Amigos:</h1>
+         <div class="spacer">
+         <table class="table">
+             <thead>
+             <tr>
+                 <th>Avatar</th>
+                 <th>Nombre</th>
+                 <th>Email</th>
+                 <th>Eliminar Amistad</th>
+
+             </tr>
+             </thead>
+             <tbody>
+
+                 @foreach ($users as $user)
+                   <tr>
+                     <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
+                     <td>{{$user->name}}</td>
+                     <td>{{$user->email}}</td>
+                       <td><a href="/eliminarAmistad/{{$posteo->id}}"><ion-icon name="thumbs-down"></ion-icon></a></td>
+                   </tr>
+                 @endforeach
+
+             </tbody>
+         </table>
+     </section>
+    </div>
+    </div>
+
+
+      <div class="posiblesAmigos">
+         <h1>Buscar Amigos:</h1>
+         <div class="spacer">
+         <table class="table">
+             <thead>
+             <tr>
+                 <th>Avatar</th>
+                 <th>Nombre</th>
+                 <th>Email</th>
+                 <th>Solicitud Amistad</th>
+
+             </tr>
+             </thead>
+             <tbody>
+
+                 @foreach ($users as $user)
+                   <tr>
+                     <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
+                     <td>{{$user->name}}</td>
+                     <td>{{$user->email}}</td>
+                       <td><a href="/solicitarAmistad/{{$posteo->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
+                   </tr>
+                 @endforeach
+
+             </tbody>
+         </table>
+     </section>
+    </div>
+    </div>
 
 @endsection

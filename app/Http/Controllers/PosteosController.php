@@ -80,15 +80,16 @@ class PosteosController extends Controller
      */
     public function show(){
 
+        // Ver posteos activos
+        $posteosActivos=Posteo::where('activo','=','1')->get();
+
+        //Ver solamente posteos activos de usuarios activos
+        //$posteos=Posteo::where('activo','=','1')->users()->where('activo','=','1')->get();
 
         // Ver posteos solo de Amigos
         // $miId=Auth::user()->id;
         // $users = User::where('amigos_usuarios'.'user_id','=',$miId,'&&','amigos_usuarios'.'status','=','1','||','id','=',$miId)->get();
 
-        $posteosActivos=Posteo::where('activo','=','1')->get();
-
-        //Ver solamente posteos activos de usuarios activos
-        //$posteos=Posteo::where('activo','=','1')->user()->where('activo','=','1')->get();
 
         $posteos= $posteosActivos;
 

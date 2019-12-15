@@ -17,7 +17,7 @@ class Posteo extends Model
     return $this->user_id;
   }
 
-public function user(){
+public function users(){
     return $this->belongsTo(User::class);
   }
 }
