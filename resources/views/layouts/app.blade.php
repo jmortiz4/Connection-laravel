@@ -48,7 +48,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-secondary" href="formularios/formularioContacto.html">Contacto</a>
+                <a class="nav-link text-secondary"  href="{{ route('contacto') }}">{{ __('Contacto') }}</a>
               </li>
 
               @else
@@ -70,7 +70,7 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" href="formularios/formularioContacto.html">Contacto</a>
+                  <a class="nav-link text-secondary" href="{{ route('contacto') }}">{{ __('Contacto') }}</a>
                 </li>
             @endguest
 

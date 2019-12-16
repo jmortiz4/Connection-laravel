@@ -37,6 +37,13 @@ Route::post('/foto', 'PerfilController@save');
 // Ruta para eliminar posteos propios
 Route::get('/eliminarPosteo/{id}', 'PosteosController@destroy')->name('eliminarPosteo');
 
+// Rutas para formulario de contacto
+// Ruta para acceder a formulario de contacto
+Route::get('/contacto', 'ContactoController@index')->name('contacto');
+// Ruta para enviar mensaje de contacto
+//Route::post('/enviarMensaje', 'ContactoController@enviar');
+Route::post('enviarMensaje', ['as'=>'contactus.store','uses'=>'ContactoController@save']);
+
 
 
 // Rutas para la administracion de la pagina: Posteos y Usuarios

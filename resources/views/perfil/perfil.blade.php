@@ -75,7 +75,7 @@
                      <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
                      <td>{{$user->name}}</td>
                      <td>{{$user->email}}</td>
-                       <td><a href="/eliminarAmistad/{{$posteo->id}}"><ion-icon name="thumbs-down"></ion-icon></a></td>
+                       <td><a href="/eliminarAmistad/{{$user->id}}"><ion-icon name="thumbs-down"></ion-icon></a></td>
                    </tr>
                  @endforeach
 
@@ -106,7 +106,7 @@
                      <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
                      <td>{{$user->name}}</td>
                      <td>{{$user->email}}</td>
-                       <td><a href="/solicitarAmistad/{{$posteo->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
+                       <td><a href="/solicitarAmistad/{{$user->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
                    </tr>
                  @endforeach
 
