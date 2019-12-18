@@ -70,7 +70,7 @@
              </thead>
              <tbody>
 
-                 @foreach ($users as $user)
+                 @foreach ($misAmigos as $user)
                    <tr>
                      <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
                      <td>{{$user->name}}</td>
@@ -115,5 +115,35 @@
      </section>
     </div>
     </div>
+
+    <div class="solicitudAmistad">
+       <h1>Solicitudes de Amistad:</h1>
+       <div class="spacer">
+       <table class="table">
+           <thead>
+           <tr>
+               <th>Avatar</th>
+               <th>Nombre</th>
+               <th>Email</th>
+               <th>Aceptar Amistad</th>
+
+           </tr>
+           </thead>
+           <tbody>
+
+               @foreach ($solicitudAmistad as $user)
+                 <tr>
+                   <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}"></div> </td>
+                   <td>{{$user->name}}</td>
+                   <td>{{$user->email}}</td>
+                     <td><a href="/aceptarAmistad/{{$user->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
+                 </tr>
+               @endforeach
+
+           </tbody>
+       </table>
+   </section>
+  </div>
+  </div>
 
 @endsection

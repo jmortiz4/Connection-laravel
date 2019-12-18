@@ -2,23 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Posteo;
 use App\User;
+use App\Amigo;
 use Auth;
 
 class PerfilController extends Controller
 {
     //
 
-    public function show(){
+    public function show()
+    {
+        // Ver todos los Usuarios Activos salvo el mio
+        $users=User::paginate(10)->where('activo',1)->where('id','<>',Auth::user()->id);
+        // Ver mis Posteos
+        $misPosteos = Auth::user()->posteos()->active()->get();
+        //Ver mis Amigos Activos
+        $misAmigos = Auth::user()->amigos()->active()->where('status',1)->get();
 
-        $users=User::all();
-        $misPosteos=Posteo::where('user_id','=',Auth::user()->id)->where('activo','=','1')->get();
+        //Ver solicitudes de amistad recibidas
+        $solicitudAmistad = Auth::user()->amigos()->active()->where('status',0)->get();
 
 
 
-        return view('perfil.perfil',compact('misPosteos','users'));
+        return view('perfil.perfil',compact('misPosteos','users','misAmigos','solicitudAmistad'));
     }
 
     public function save(Request $request)
@@ -60,5 +70,18 @@ class PerfilController extends Controller
         return  redirect('perfil');
     }
 
+    public function solicitarAmistad($id)
+    {
+      Auth::user()->amigos()->attach($id);
 
+      return redirect('perfil');
+    }
+
+    public function aceptarAmistad($idSolicitante){
+
+      Auth::user()->amigos()->where('amigo_id',$idSolicitante)->update(['status'=>'1']);
+
+
+      return  redirect('perfil');
+    }
 }

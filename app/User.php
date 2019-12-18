@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Posteo;
+use App\Amigo;
 
 class User extends Authenticatable
 {
@@ -40,10 +41,15 @@ class User extends Authenticatable
 
 
   public function posteos(){
-      return $this->hasMany(Posteo::class,);
+      return $this->hasMany(Posteo::class);
     }
 
-    public function users(){
-        return $this->belongsToMany(User::class);
+    public function amigos(){
+        return $this->belongsToMany('App\User','amigo_user', 'amigo_id', 'user_id')->withPivot('status');
+      }
+
+    public function scopeActive($query)
+      {
+        return $query->where('activo', 1);
       }
 }

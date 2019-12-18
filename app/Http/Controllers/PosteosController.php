@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Posteo;
 use App\User;
@@ -79,20 +81,12 @@ class PosteosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(){
+        $id= Auth::user()->id;
 
-        // Ver posteos activos
-        $posteosActivos=Posteo::where('activo','=','1')->get();
+        // Ver Posteos de Amigos Activos.
+        $idsAmigos = auth()->user()->amigos->pluck('id');
 
-        //Ver solamente posteos activos de usuarios activos
-        //$posteos=Posteo::where('activo','=','1')->users()->where('activo','=','1')->get();
-
-        // Ver posteos solo de Amigos
-        // $miId=Auth::user()->id;
-        // $users = User::where('amigos_usuarios'.'user_id','=',$miId,'&&','amigos_usuarios'.'status','=','1','||','id','=',$miId)->get();
-
-
-        $posteos= $posteosActivos;
-
+        $posteos = Posteo::whereIn('user_id', $idsAmigos)->paginate(10);
 
         return view('posteos.listadoPosteos',compact('posteos'));
     }

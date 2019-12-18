@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 // Rutas para Crud Posteos
 // Ruta para mostrar posteos solamente de amigos
 Route::get('/posteos', 'PosteosController@show')->name('posteos');
@@ -29,6 +30,7 @@ Route::post('/guardarPosteo','PosteosController@save');
 // Ruta para buscar posteos de mis amigos
 Route::get('/buscarPosteo','PosteosController@search');
 
+
 // Rutas para el Perfil
 // Ruta para acceder a la vista del perfil
 Route::get('/perfil', 'PerfilController@show')->name('perfil');
@@ -36,6 +38,12 @@ Route::get('/perfil', 'PerfilController@show')->name('perfil');
 Route::post('/foto', 'PerfilController@save');
 // Ruta para eliminar posteos propios
 Route::get('/eliminarPosteo/{id}', 'PosteosController@destroy')->name('eliminarPosteo');
+// Ruta para solicitar Amistad
+Route::get('/solicitarAmistad/{id}', 'PerfilController@solicitarAmistad');
+// Ruta para aceptar Amistad
+Route::get('/aceptarAmistad/{id}', 'PerfilController@aceptarAmistad');
+
+
 
 // Rutas para formulario de contacto
 // Ruta para acceder a formulario de contacto
@@ -47,7 +55,6 @@ Route::post('enviarMensaje', ['as'=>'contactus.store','uses'=>'ContactoControlle
 
 
 // Rutas para la administracion de la pagina: Posteos y Usuarios
-
 Route::get('/administrarPosteos', 'AdminPosteosController@index')->name('administrarPosteos');
 
 Route::get('/detallePosteo/{id}','AdminPosteosController@show')->name('detallePosteo');
