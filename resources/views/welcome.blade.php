@@ -1,25 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
-@section('content')
-<!doctype html>
-<html lang="es">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=deviceS-width, initial-scale=1, shrink-to-fit=no">
+@section('titulo', 'welcome')
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/master.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Exo:200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="animate.css-master/animate.css">
-
-  <title>Connection</title>
-</head>
-
-<body class="bg-dark">
+@section('contenido')
   <!-- *******************************Carousel************************************ -->
   <div class="carousel ">
     <div class="bd-example ">
@@ -66,24 +49,25 @@
   </div>
   <!-- *******************************fqs************************************ -->
 
+  <div class="container">
   <div class="faq row"id=preguntas>
-    <h3 class="col-12 d-flex justify-content-center animated rollIn"style="animation-delay: .5s">PREGUNTAS FRECUENTES</h3>
-  <br>
-  <br>
-  <br>
+    <div class="col-12 mb-5 d-flex justify-content-center ">
+      <h3 class="animated rollIn"style="animation-delay: .5s">PREGUNTAS FRECUENTES</h3>
+    </div>
+ 
       <section class="col-12 d-flex">
         <ul>
         <div>
-          <h2 class="col-12 d-flex animated bounceInRight ">De qué se trata todo esto?</h2>
+          <h2 class=" animated bounceInRight ">De qué se trata todo esto?</h2>
           <p class="animated bounceInLeft">Connection es una herramienta para las personas que aman la música electrónica y quieren compartir experiencias, anécdotas relacionadas con el género.</p>
         </div>
 
         <div>
-            <h2 class="col-12 d-flex animated bounceInRight">Como subo Contenido?</h2>
+            <h2 class="animated bounceInRight">Como subo Contenido?</h2>
             <p class="animated bounceInLeft">Es muy sensillo. Una vez registrado tendrás acceso a nuestra comunidad, donde podrás agregar amigos, vínculos, fotos, videos y música.</p>
           </div>
         <div>
-            <h2 class="col-12 d-flex animated bounceInRight">Cómo puedo modificar la foto de perfil?</h2>
+            <h2 class="animated bounceInRight">Cómo puedo modificar la foto de perfil?</h2>
               <ul class="animated bounceInLeft">
                 <li>Haz Click en tu foto de perfil > Presiona <strong>EDITAR</strong>. </li>
                 <li>Busca y selecciona en tus archivos la imagen que desees y haz click en <strong>ACEPTAR</strong> para finalizar.</li>
@@ -118,64 +102,5 @@
         </div>
       </section>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer class="row col-12  justify-content-center ">
-      <br>
-      <br>
-        <p class=" align-self-center">Copyright &#169;El Trio Dinámico</p>
-      <br>
-      <br>
-    </footer>
 </div>
-
-
-
-
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
-
-</html>
-@endsection
+  @endsection

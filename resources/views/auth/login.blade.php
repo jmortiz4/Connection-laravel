@@ -1,14 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
-@section('content')
-<div class="container">
+@section('contenido')
+<div class="p-5">
+<div class="container  p-5 mt-5 marco clearfix">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="col-md-8">
+            <div class="card bg-transparent">
+                <div class="videos position-absolute overflow-hidden">
+                    <video class="video-fluid w-100  " autoplay loop muted>
+                     <source src="video/video pagina 3.mp4" type="video/mp4" />
+                   </video>
+               </div>
+                <div class="card-header text-light">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    
+                    <form class="position-relative text-light" method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -41,10 +48,10 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
+                                <div class="form-check justify-content-around ">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label  " for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -53,7 +60,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-primary">
                                     {{ __('Login') }}
                                 </button>
 
@@ -71,3 +78,4 @@
     </div>
 </div>
 @endsection
+</div>
