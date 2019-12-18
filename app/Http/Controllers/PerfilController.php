@@ -84,4 +84,12 @@ class PerfilController extends Controller
 
       return  redirect('perfil');
     }
+
+    public function eliminarAmistad($idEliminado){
+
+      Auth::user()->amigos()->where('amigo_id',$idEliminado)->update(['status'=>'0']);
+
+
+      return  redirect('perfil');
+    }
 }

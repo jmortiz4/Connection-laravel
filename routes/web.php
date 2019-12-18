@@ -42,6 +42,8 @@ Route::get('/eliminarPosteo/{id}', 'PosteosController@destroy')->name('eliminarP
 Route::get('/solicitarAmistad/{id}', 'PerfilController@solicitarAmistad');
 // Ruta para aceptar Amistad
 Route::get('/aceptarAmistad/{id}', 'PerfilController@aceptarAmistad');
+// Ruta para eliminar Amistad
+Route::get('/eliminarAmistad/{id}', 'PerfilController@eliminarAmistad');
 
 
 
