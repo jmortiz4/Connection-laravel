@@ -71,7 +71,7 @@
                   </li>
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              <img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
+                              <img style="border-radius:10%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
                           {{ Auth::user()->name }} <span class="caret"></span>
                       </a>
 
@@ -88,16 +88,16 @@
                     @else
                       <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-outline-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
+                                  <img class=" img-fluid"style="border-radius:10%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
                               {{ Auth::user()->name }} <span class="caret"></span>
                           </a>
 
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <button class="dropdown-item btn btn-outline-light" href="{{ route('logout') }}"
+                              <a class="dropdown-item btn btn-outline-light" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
                                   {{ __('Salir') }}
-                              </button>
+                              </a>
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               @csrf
                           </form>

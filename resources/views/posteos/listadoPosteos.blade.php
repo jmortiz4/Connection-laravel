@@ -1,7 +1,9 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.master')
+@section('contenido')
   <br>
   <br>
+  <div class="container"style="
+  padding-top: 100px">
     <h2 class="text-center">Listado de Posteos</h2>
     <div>
     <form action="/buscarPosteo" method="GET">
@@ -48,3 +50,4 @@
     </div>
 
 @endsection
+</div>

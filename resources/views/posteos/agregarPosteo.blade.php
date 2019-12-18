@@ -1,12 +1,14 @@
 
 
 
-@extends('layouts.app')
-@section('content')
+@extends('layouts.master')
+@section('contenido')
     <br>
     <br>
+    <br>
+    
     <h2 class="text-center">Postear</h2>
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row mt-5">
         <div class="col-lg-8 offset-lg-2">
             <!-- @if (count($errors->all())>0)
