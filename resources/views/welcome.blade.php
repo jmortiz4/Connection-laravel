@@ -38,7 +38,7 @@
               <source src="video/video pagina 3.mp4"  type="video/mp4" />
             </video>
             <div class="carousel-caption d-md-block">
-              <h5 class="animated bounceInRight ">Confusio</h5>
+              <h5 class="animated bounceInRight ">Confucio</h5>
               <p class="animated bounceInUp" style="animation-delay: .5s">La música produce un tipo de placer sin el que
                 la naturaleza humana no puede vivir. </p>
             </div>
