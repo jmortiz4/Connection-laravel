@@ -84,9 +84,15 @@ class PosteosController extends Controller
         $id= Auth::user()->id;
 
         // Ver Posteos de Amigos Activos.
-        $idsAmigos = auth()->user()->amigos->pluck('id');
+        $misAmigos = Auth::user()->amigos()->active()->where('status',1)->get();
+        $idsAmigos = $misAmigos->pluck('id');
+        //$idsAmigos = auth()->user()->amigos->pluck('id');
+        if ($idsAmigos==null) {
+            $posteos = Posteo::whereIn('user_id', [$idsAmigos,$id])->orderBy('created_at')->paginate(10);
+        }else {
+            $posteos = Posteo::where('user_id',$id)->orderBy('created_at')->paginate(10);
+        }
 
-        $posteos = Posteo::whereIn('user_id', $idsAmigos)->paginate(10);
 
         return view('posteos.listadoPosteos',compact('posteos'));
     }

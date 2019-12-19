@@ -20,19 +20,24 @@ class PerfilController extends Controller
         //Ver mis Amigos Activos
         $misAmigos = Auth::user()->amigos()->active()->where('status',1)->get();
 
-        $ignored = collect(Auth::user()->id, $misAmigos->pluck('id'));
+        $ignored = collect([Auth::user()->id, $misAmigos->pluck('id')]);
 
-        // Ver todos los Usuarios Activos salvo el mio
-        $users=User::where('activo',1)
-          ->whereNotIn('id', $ignored)
-          ->paginate(10);
+        // Ver todos los Usuarios Activos salvo el mio y mis amigos
+        if($misAmigos==null){
+          $users=User::where('activo',1)
+            ->whereNotIn('users.id', $ignored)
+            ->paginate(10);
+        }else {
+          $users=User::where('activo',1)
+            ->where('users.id','<>', Auth::user()->id)
+            ->paginate(10);
+        };
 
         // Ver mis Posteos
         $misPosteos = Auth::user()->posteos()->active()->get();
 
         //Ver solicitudes de amistad recibidas
-        $solicitudAmistad = Auth::user()->amigos()->active()->where('status',0)->get();
-
+        $solicitudAmistad = Auth::user()->amigos()->active()->where('user_id','<>',Auth::user()->id)->where('status',0)->get();
 
 
         return view('perfil.perfil',compact('misPosteos','users','misAmigos','solicitudAmistad'));
@@ -77,6 +82,7 @@ class PerfilController extends Controller
         return  redirect('perfil');
     }
 
+    // aca probablemente esta invertido el orden de la tabla pivot
     public function solicitarAmistad($id)
     {
       Auth::user()->amigos()->attach($id);
@@ -94,7 +100,9 @@ class PerfilController extends Controller
 
     public function eliminarAmistad($idEliminado){
 
-      Auth::user()->amigos()->where('amigo_id',$idEliminado)->update(['status'=>'0']);
+      //Auth::user()->amigos()->where('amigo_id',$idEliminado)->update(['status'=>'0']);
+
+      Auth::user()->amigos()->sync([$idEliminado=>['status'=>'0']]);
 
 
       return  redirect('perfil');

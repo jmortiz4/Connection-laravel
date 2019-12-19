@@ -44,19 +44,19 @@ class User extends Authenticatable
       return $this->hasMany(Posteo::class);
     }
 
-    public function amigos($me, $other){
-        return $this->belongsToMany('App\User','amigo_user', $me, $other)->withPivot('status');
+    public function amigos(){
+        return $this->belongsToMany('App\User','amigo_user', 'user_id', 'amigo_id')->withPivot('status');
     }
 
-    public function solicitantes()
-    {
-      return $this->amigos('user_id', 'amigo_id')->where('amigo_user.status', 0);
-    }
-
-    public function amistades()
-    {
-      return $this->amigos('amigo_id', 'user_id')->where('amigo_user.status', 1);
-    }
+    // public function solicitantes()
+    // {
+    //   return $this->amigos('user_id', 'amigo_id')->where('amigo_user.status', 0);
+    // }
+    //
+    // public function amistades()
+    // {
+    //   return $this->amigos('amigo_id', 'user_id')->where('amigo_user.status', 1);
+    // }
 
     public function scopeActive($query)
       {

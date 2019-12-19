@@ -15,8 +15,8 @@ class CreateAmigoUserTable extends Migration
     {
         Schema::create('amigo_user', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->unsignedBigInteger('amigo_id');
           $table->unsignedBigInteger('user_id');
+          $table->unsignedBigInteger('amigo_id');
           $table->foreign('amigo_id')->references('id')->on('users');
           $table->foreign('user_id')->references('id')->on('users');
           $table->boolean('status')->default(0);
