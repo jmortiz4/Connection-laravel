@@ -16,12 +16,19 @@ class PerfilController extends Controller
 
     public function show()
     {
-        // Ver todos los Usuarios Activos salvo el mio
-        $users=User::paginate(10)->where('activo',1)->where('id','<>',Auth::user()->id);
-        // Ver mis Posteos
-        $misPosteos = Auth::user()->posteos()->active()->get();
+
         //Ver mis Amigos Activos
         $misAmigos = Auth::user()->amigos()->active()->where('status',1)->get();
+
+        $ignored = collect(Auth::user()->id, $misAmigos->pluck('id'));
+
+        // Ver todos los Usuarios Activos salvo el mio
+        $users=User::where('activo',1)
+          ->whereNotIn('id', $ignored)
+          ->paginate(10);
+
+        // Ver mis Posteos
+        $misPosteos = Auth::user()->posteos()->active()->get();
 
         //Ver solicitudes de amistad recibidas
         $solicitudAmistad = Auth::user()->amigos()->active()->where('status',0)->get();
@@ -79,7 +86,7 @@ class PerfilController extends Controller
 
     public function aceptarAmistad($idSolicitante){
 
-      Auth::user()->amigos()->where('amigo_id',$idSolicitante)->update(['status'=>'1']);
+      Auth::user()->amigos()->sync([$idSolicitante=>['status'=>'1']]);
 
 
       return  redirect('perfil');
