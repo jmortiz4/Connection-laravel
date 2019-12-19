@@ -7,8 +7,14 @@
     <br>
     <br>
     
-    <h2 class="text-center">Postear</h2>
+    <h3 class="text-center ">Postear</h3>
     <div class="container-fluid ">
+        <div class="card bg-transparent">
+            <div class="videos position-absolute overflow-hidden">
+                <video class="video-fluid w-100  " autoplay loop muted>
+                 <source src="video/video pagina 3.mp4" type="video/mp4" />
+               </video>
+           </div>
         <div class="row mt-5">
         <div class="col-lg-8 offset-lg-2">
             <!-- @if (count($errors->all())>0)
@@ -22,7 +28,7 @@
             <form action="/guardarPosteo" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="comentario">Que estás escuchando?</label>
+                    <label for=" comentarios">Que estás escuchando?</label>
                     <input type="text" class="form-control" name="comentario" id="comentario" value="">
 
                 </div>
@@ -34,7 +40,7 @@
 
 
 
-                <button type="submit" class="btn btn-primary">Postear</button>
+                <button type="submit" class="btn btn-outline-light">Postear</button>
             </form>
 
         </div>

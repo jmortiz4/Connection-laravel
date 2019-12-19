@@ -29,7 +29,7 @@ transform: translateY(-60%);
 }
 .nombre_comentario{
     font-family: 'Franklin Gothic Medium';
-    color: grey;
+    color: white;
 }
 .botonLogin{
     text-decoration: none;
@@ -53,10 +53,10 @@ ul li{
 h3{
     color: white;
     font-size: 3rem;
-    font-family: 'Exo', sans-serif;
+    font-family: 'Exo';
     margin: 20px;
     padding: 50px;
-    background-color: rgba(0, 255, 255, 0.075);
+    background-color: rgba(0, 255, 255, 0.055);
 }
 .videos{
     position: absolute;
@@ -72,3 +72,12 @@ body{
     background-color: black;
 }
 
+label{
+    color: white;
+}
+th{
+    color: white;
+}
+td{
+    color: white;
+}

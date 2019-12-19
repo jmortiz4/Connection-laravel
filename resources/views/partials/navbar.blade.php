@@ -86,11 +86,11 @@
                     </form>
                     </li>
                     @else
-                      <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-outline-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img class=" img-fluid"style="border-radius:10%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
-                              {{ Auth::user()->name }} <span class="caret"></span>
-                          </a>
+                    <li class="nav-item dropdown ">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-outline-light  " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              {{-- <img class=" img-fluid"style="border-radius:10%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar"> --}}
+                          {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
 
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item btn btn-outline-light" href="{{ route('logout') }}"

@@ -3,8 +3,8 @@
 
   <br><br><br><br>
   <div class="container">
-
-   <section class="row  text-center ">
+<div class="form-goup">
+   <section class=" row  text-center ">
      <article class="col-12  " >
      <h1>Bienvenido: {{Auth::user()->name}}</h1>
      <p>
@@ -17,14 +17,14 @@
          <div class="form-group">
                  <input type="file" class="form-control" name="avatar" id="avatar" value="">
          </div>
-         <button type="submit" class="btn btn-primary">Subir foto</button>
+         <button type="submit" class="btn btn-outline-light">Subir foto</button>
      </form>
      </article>
      </section>
 
-     <div class="misPosteos">
-       <h1>Mis Posteos:</h1>
-       <div class="spacer">
+     <div class="misPosteos ">
+       <h2>Mis Posteos:</h2>
+       <div class="spacer ">
        <table class="table">
            <thead>
            <tr>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="misAmigos">
-         <h1>Mis Amigos:</h1>
+         <h2>Mis Amigos:</h2>
          <div class="spacer">
          <table class="table">
              <thead>
@@ -87,7 +87,7 @@
 
 
       <div class="posiblesAmigos">
-         <h1>Buscar Amigos:</h1>
+         <h2>Buscar Amigos:</h2>
          <div class="spacer">
          <table class="table">
              <thead>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="solicitudAmistad">
-       <h1>Solicitudes de Amistad:</h1>
+       <h2>Solicitudes de Amistad:</h2>
        <div class="spacer">
        <table class="table">
            <thead>
@@ -145,5 +145,5 @@
    </section>
   </div>
   </div>
-
+</div>
 @endsection

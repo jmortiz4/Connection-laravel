@@ -2,9 +2,9 @@
 @section('contenido')
   <br>
   <br>
-  <div class="container"style="
+  <div class="container form-group"style="
   padding-top: 100px">
-    <h2 class="text-center">Listado de Posteos</h2>
+    <h3 class="text-center">Listado de Posteos</h3>
     <div>
     <form action="/buscarPosteo" method="GET">
 
