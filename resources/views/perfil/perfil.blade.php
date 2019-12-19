@@ -56,7 +56,7 @@
       </div>
 
       <div class="misAmigos">
-         <h2>Mis Amigos:</h2>
+         <h2>Siguiendo:</h2>
          <div class="spacer">
          <table class="table">
              <thead>
@@ -87,7 +87,7 @@
 
 
       <div class="posiblesAmigos">
-         <h2>Buscar Amigos:</h2>
+         <h2>Usuarios de Connection:</h2>
          <div class="spacer">
          <table class="table">
              <thead>
@@ -116,7 +116,7 @@
     </div>
     </div>
 
-    <div class="solicitudAmistad">
+    {{-- <div class="solicitudAmistad">
        <h2>Solicitudes de Amistad:</h2>
        <div class="spacer">
        <table class="table">
@@ -141,7 +141,7 @@
                @endforeach
 
            </tbody>
-       </table>
+       </table> --}}
    </section>
   </div>
   </div>

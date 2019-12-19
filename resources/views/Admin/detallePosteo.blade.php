@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.master')
+@section('contenido')
 <h2 class="text-center">Detalles del Posteo:</h2>
 <div class="row mt-5">
     <div class="col-lg-4 offset-lg-4">

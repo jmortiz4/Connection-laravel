@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.master')
+@section('contenido')
     <br>
     <br>
     <h2 class="text-center">Listado de Posteos</h2>
